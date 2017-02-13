@@ -1,6 +1,6 @@
 <?php
 
- switch (5) {
+ switch (15) {
  	case '0':
  		 echo 'The value is 0';
  		break;
@@ -14,9 +14,8 @@
 			break;	
 
  	default:
- 		echo 'The value default';
+ 		echo 'None of the above';
  		break;
  }
 
 ?>
-
