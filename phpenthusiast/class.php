@@ -14,8 +14,7 @@ class Car
 
 	public $tank;
 
- 	private $model;
-
+ 
 	// Methods
  	// The method can now approach the class propertieswith the $this keyword
 	public function hello()
@@ -38,29 +37,38 @@ class Car
 	     return $this;
 	}
 
-	public function setModel($model)
-	{
+
+		//A private property or method can be used only by the parent.
+		private $model;
+		// Public methods and properties can be used by both the parent and the child classes.
+		public function setModel($model)
+		{
 		//$this -> model = $model;
 
-		//validate that only certain car models are assigned to the $carModel property
-    	$allowedModels = array("Mercedes benz","BMW");
+			//validate that only certain car models are assigned to the $carModel property
+			$allowedModels = array("Mercedes benz","BMW");
 
 
-		if (in_array($model, $allowedModels)) {
-			 $this -> model = $model;
-		} else {
-			  $this -> model = "not in our list of models.";
+			if (in_array($model, $allowedModels)) {
+				
+				$this -> model = $model;
+				} else {
+				$this -> model = "not in our list of models.";
+				}
+
 		}
-
-	}
 
 	public function getModel()
 	{
-		return "The car model is  " . $this -> model;
+		return "The " . __CLASS__ ." model is " . $this -> model ;
+
+		// Other magic constants that may be of help are:
+
+		// __LINE__ to get the line number in which the constant is used.
+		// __FILE__ to get the full path or the filename in which the constant is used.
+		// __METHOD__ to get the name of the method in which the constant is used. 
+
 	}
-
-
-
 
 }
 

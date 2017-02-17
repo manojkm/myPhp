@@ -51,9 +51,12 @@ $tank = $bmw -> fill(10) -> ride(40) -> tank;
 echo "<br />";
 echo "The number of gallons left in the tank: " . $tank . " gal.";
 
+
 echo "<hr />";
 $mercedes -> setModel("Mercedes benz");
 //Gets the car’s model
 echo $mercedes -> getModel();
+
+
 
 ?>
