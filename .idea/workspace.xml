@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c20f53c-c93f-4ab6-9aa3-e27f760f8c57" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorialrepublic/MySQL.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oops/first_class.php" afterPath="$PROJECT_DIR$/oops/first_class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpenthusiast/index.php" afterPath="$PROJECT_DIR$/phpenthusiast/index.php" />
-    </list>
+    <list default="true" id="9c20f53c-c93f-4ab6-9aa3-e27f760f8c57" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,12 +218,12 @@
       <option name="presentableId" value="Default" />
       <updated>1487405078505</updated>
       <workItem from="1487405080174" duration="13386000" />
-      <workItem from="1487602025827" duration="5090000" />
+      <workItem from="1487602025827" duration="5668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18476000" />
+    <option name="totallyTimeSpent" value="19054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
