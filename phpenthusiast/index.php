@@ -24,7 +24,7 @@ echo "<hr />";
  
 // Set the values of the class properties.
 $bmw -> comp = "BMW";
-$bmw -> color = 'red';
+$bmw -> color = 'blue';
 $mercedes -> comp = "Mercedes Benz";
 $mercedes -> color = "green";
  
