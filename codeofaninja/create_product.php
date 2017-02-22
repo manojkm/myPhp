@@ -14,7 +14,6 @@ $product = new Product($db);
 $category = new Category($db);
 
 
-
 // set page headers
 $page_title = "Create Product";
 include_once "header.php";
