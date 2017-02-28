@@ -4,7 +4,7 @@
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // set number of records per page
-$records_per_page = 3;
+$records_per_page = 8;
 
 // calculate for the query LIMIT clause
 $from_record_num = ($records_per_page * $page) - $records_per_page;
@@ -64,17 +64,18 @@ if($num>0){
 
         echo "<td>";
         // read one, edit and delete button will be here
+
         // read product button
         echo "<a href='read_one.php?id={$id}' class='btn btn-primary left-margin'>";
         echo "<span class='glyphicon glyphicon-list'></span> Read";
         echo "</a>";
 
-// edit product button
+        // edit product button
         echo "<a href='update_product.php?id={$id}' class='btn btn-info left-margin'>";
         echo "<span class='glyphicon glyphicon-edit'></span> Edit";
         echo "</a>";
 
-// delete product button
+        // delete product button
         echo "<a delete-id='{$id}' class='btn btn-danger delete-object'>";
         echo "<span class='glyphicon glyphicon-remove'></span> Delete";
         echo "</a>";
@@ -85,6 +86,15 @@ if($num>0){
     }
 
     echo "</table>";
+
+    // the page where this paging is used
+    $page_url = "index.php?";
+
+// count all products in the database to calculate total pages
+    $total_rows = $product->countAll();
+
+// paging buttons here
+    include_once 'paging.php';
 
     // paging buttons will be here
 }
