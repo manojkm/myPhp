@@ -9,8 +9,6 @@ class Cars
 
     function greetings(){
 
-
-
     }
 
 }
