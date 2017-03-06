@@ -9,8 +9,6 @@ class Cars
 
     function greetings(){
 
-
-
     }
 
 }
@@ -20,3 +18,5 @@ class Cars
 
 echo Cars::$door_count;
 //echo Cars::$wheel_count;
+
+

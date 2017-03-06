@@ -25,7 +25,6 @@ class Cars {
 
 $bmw= new Cars();
 
-
 $bmw->set_values();
 $bmw->get_values();
 

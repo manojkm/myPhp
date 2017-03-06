@@ -10,7 +10,7 @@ class Cars {
 
         function greeting()
         {
-            return "This car has " . $this->seat_count . " Wheels" ;
+            return "This car has " . $this->wheel_count . " Wheels" ;
         }
 
 
