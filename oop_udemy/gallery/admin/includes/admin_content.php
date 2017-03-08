@@ -80,6 +80,26 @@
             ?>
 
 
+            <?php
+
+//            $user = new User();
+//            $user->username = "manukm";
+//            $user->first_name = "Manu";
+//            $user->last_name = "km";
+//            $user->password= "test123";
+//
+//            $user->create();
+
+            ?>
+
+            <?php
+
+              $user = User::find_user_by_id(8);
+              $user->last_name = "Sangi";
+              $user->update();
+
+            ?>
+
 
 
             <ol class="breadcrumb">
