@@ -63,42 +63,29 @@
 
             ?>
 
+
+
             <?php
-            $user = User::find_all_users();
 
-            foreach ($user as $user){
-                echo $user->username . "<br/>";
-            }
-
-            echo "<hr/>";
+            $user = User::find_user_by_id(14);
+            $user->first_name = "ssss";
+            $user->update();
 
             ?>
 
             <?php
-            $found_user= User::find_user_by_id(1);
-            echo $found_user->username;
-            ?>
-
-
-            <?php
-
-//            $user = new User();
-//            $user->username = "manukm";
-//            $user->first_name = "Manu";
-//            $user->last_name = "km";
-//            $user->password= "test123";
 //
-//            $user->create();
+//            $user =  new User();
+//            $user->username = "ssss";
+//            $user->first_name = "kkkk";
+//            $user->save();
 
             ?>
 
-            <?php
 
-              $user = User::find_user_by_id(8);
-              $user->first_name = "Sangi";
-              $user->update();
+ 
 
-            ?>
+
 
 
 
