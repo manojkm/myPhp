@@ -95,7 +95,7 @@
             <?php
 
               $user = User::find_user_by_id(8);
-              $user->last_name = "Sangi";
+              $user->first_name = "Sangi";
               $user->update();
 
             ?>
