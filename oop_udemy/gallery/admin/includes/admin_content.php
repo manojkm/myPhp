@@ -67,23 +67,32 @@
 
             <?php
 
-            $user = User::find_user_by_id(14);
-            $user->first_name = "ssss";
-            $user->update();
-
-            ?>
-
-            <?php
-//
-//            $user =  new User();
-//            $user->username = "ssss";
-//            $user->first_name = "kkkk";
+//            $user = User::find_user_by_id(10);
+//            $user->first_name = "mmm";
 //            $user->save();
 
             ?>
 
+            <?php
+                $user =  new User();
+                $user->username = "sdad";
+                $user->first_name = "kkkk";
+                $user->save();
+            ?>
 
- 
+
+            <?php
+
+//            $user =  new User();
+//            $proarray = $user->properties();
+//
+//            foreach ($proarray as $class)
+//            {
+//                echo $class . "<br/>";
+//
+//            }
+
+            ?>
 
 
 
