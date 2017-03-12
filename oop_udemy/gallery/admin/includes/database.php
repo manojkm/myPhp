@@ -1,81 +1,85 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: manoj
+ * Date: 12/3/17
+ * Time: 11:45 AM
+ */
 
-require_once("new_config.php");
+require_once ("new_config.php");
 
-class Database
-{
-
+class Database{
 
     public $connection;
 
-// OLD WAY
-//    public function open_db_connection()
-//    {
-//        $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME );
-//        if (mysqli_connect_errno())
-//        {
-//            die("Databse conection went badly" . mysqli_error());
-//        }
-//    }
-
-
-    public function open_db_connection()
-    {
-        $this->connection = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-        if ($this->connection->connect_errno) {
-            die("Databse conection went badly" . $this->connection->connect_errno);
-        }
-    }
-
-
     public function __construct()
     {
-        $this->open_db_connection();
+        $this->open_connection();
     }
 
-// OLD WAY
-//    public function query($sql){
+
+    public function open_connection(){
+
+//Method1
+//        $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 //
-//        $result = mysqli_query($this->connection, $sql);
-//        return $result;
-//    }
+//        if ( mysqli_connect_errno() ) {
+//            printf("Connection failed: %s", mysqli_connect_error());
+//            exit();
+//
+//        }
 
+//Method2
 
-    public function query($sql)
-    {
+        $this->connection = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
-        $result = $this->connection->query($sql);
-        $this->confrim_query($result);
-        return $result;
-    }
+        if ($this->connection->connect_errno){
 
+            printf("Connection failed: %s", $this->connection->connect_errno());
+            exit();
 
-    private function confrim_query($result)
-    {
-
-        if (!$result) {
-            die("Query failed" . $this->connection->error);
         }
+
+        return true;
     }
 
 
-    public function escape_string($string)
-    {
 
-// OLD WAY
-//       $escaped_string = mysqli_real_escape_string($this->connection, $string );
 
+
+   public function query($sql)
+   {
+      // $result = mysqli_query($this->connection, $sql);
+       $result = $this->connection->query($sql);
+
+       $this->confirm_query($result);
+
+       return $result;
+   }
+
+
+   public function confirm_query($result){
+       if (!$result){
+           echo "DB connection failed" . $this->connection->error;
+       }
+   }
+
+   public function escape_string($string){
+
+//      $escaped_string = mysqli_escape_string($this->connection, $string);
         $escaped_string = $this->connection->real_escape_string($string);
         return $escaped_string;
-    }
+   }
 
-    public function the_insert_id()
-    {
-        return mysqli_insert_id($this->connection);
-    }
+
+   public function the_insert_id(){
+       return $this->connection->insert_id;
+   }
 
 }
 
 $database = new Database();
-?>
+
+//$test = new mysqli();
+//$test->insert_id
+

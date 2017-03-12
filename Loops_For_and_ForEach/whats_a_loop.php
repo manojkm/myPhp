@@ -18,7 +18,19 @@
 
 ?>
 
- <?php 
- 
+<?php
+$age =  array("JavaScript",  "HTML/CSS", "PHP",  "Python", "Ruby");
 
-  ?>
+ $properties_pairs = array();
+
+ foreach ($age  as  $value) {
+
+            $properties_pairs[] = "{$value}";
+
+            echo  $properties_pairs;
+        }
+
+
+
+
+?>

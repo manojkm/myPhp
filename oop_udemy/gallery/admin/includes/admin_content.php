@@ -9,79 +9,85 @@
             </h1>
 
 
-
-            <?php
-            //                if ($database->connection){
-            //
-            //                    echo "true";
-            //                }
-            ?>
-
-            <!-- Method 1-->
-
-            <?php
-            //
-            //            $sql =  " SELECT * FROM users WHERE id=1";
-            //            $result = $database->query($sql);
-            //            $user_found = mysqli_fetch_array($result);
-            //
-            //                echo $user_found['username'] ;
-
-            ?>
-
-            <!-- Method 2-->
+            <h3>Found user with ID</h3>
 
             <?php
 
-            //            $user = new User();
-            //
-            //            $result_set= $user->find_all_users();
-            //
-            //            while ($row = mysqli_fetch_array($result_set)){
-            //                echo $row['username'] . "&nbsp;". $row['last_name'] . "<br/>" ;
-            //
-            //            }
+            $users_found = User::find_user_by_id(10);
+            echo $users_found['username'];
+            echo "<hr/>";
+
 
             ?>
 
 
-            <!-- Method 3-->
-
-            <?php
-            //            $userID = 1;
-            //            $found_user= User::find_user_by_id($userID);
-            //            echo $found_user['username'];
-
-            ?>
+            <h3>Static method intro</h3>
 
             <?php
 
-            //            $found_user= User::find_user_by_id(2);
-            //            $user = User::instantation($found_user);
-            //
-            //                echo $user->username ;
+            $result_set = User::find_all_users();
+
+            while ($row = mysqli_fetch_array($result_set)){
+                echo $row ['username'] . "<br/>" ;
+            }
+
+            echo "<hr/>";
+
+            foreach ($result_set as $row){
+                echo $row ['username']. "<br/>";
+            }
 
             ?>
 
 
 
-            <?php
 
-            $user = User::find_user_by_id(14);
-            $user->first_name = "ssss";
-            $user->update();
+            <h3>Found all user with both while & for loop</h3>
+
+            <?php
+            $user = new User();
+            $result_set = $user->find_all_users();
+
+            while ($row = mysqli_fetch_array($result_set)){
+                echo $row ['username'] . "<br/>" ;
+            }
+
+            echo "<hr/>";
+
+            foreach ($result_set as $row){
+                echo $row ['username']. "<br/>";
+            }
 
             ?>
 
+
+
+            <h3>Found user with ID</h3>
+
             <?php
-//
-//            $user =  new User();
-//            $user->username = "ssss";
-//            $user->first_name = "kkkk";
-//            $user->save();
+
+            $sql = "SELECT * FROM users WHERE id=1";
+            $result = $database->query($sql);
+            $users_found = mysqli_fetch_array($result);
+
+            echo $users_found['username'];
+            echo "<hr/>";
 
             ?>
 
+
+
+
+            <h3>DB connection testing </h3>
+
+            <?php
+
+                if ($database->connection){
+                    echo "DB connection testing is fine";
+                }
+             echo "<hr/>";
+
+            ?>
 
 
 
