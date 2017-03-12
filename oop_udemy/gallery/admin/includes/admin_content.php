@@ -13,7 +13,7 @@
 
             <?php
 
-            $users_found = User::find_user_by_id(10);
+            $users_found = User::find_user_by_id(2);
             echo $users_found['username'];
             echo "<hr/>";
 
