@@ -8,7 +8,40 @@
                 <small>Subheading</small>
             </h1>
 
+            <h3>Found user details with ID - Method 2 (Auto Instantation - Loop)</h3>
 
+            <h3>Found user details with ID - Method 2 (Instantation)</h3>
+
+            <?php
+            $users_found = User::find_user_by_id(2);
+            $results = User::instantation_one($users_found);
+
+            echo "User ID =    " .$results->id .  "<br/>";
+            echo "User name =  " .$results->username .  "<br/>";
+            echo "Password =   " .$results->password .  "<br/>";
+            echo "First name = " .$results->first_name .  "<br/>";
+
+            ?>
+
+            <h3>Found user details with ID - Method 1 (Long)</h3>
+
+            <?php
+
+            $users_found = User::find_user_by_id(2);
+
+            $user = new User();
+            $user->id = $users_found['id'];
+            $user->username = $users_found['username'];
+            $user->password = $users_found['password'];
+            $user->first_name = $users_found['first_name'];
+            $user->last_name = $users_found['last_name'];
+
+            echo "User ID = " . $user->id .  "<br/>";
+            echo "User name = " .$user->username .  "<br/>";
+            echo "Password = " .$user->password .  "<br/>";
+            echo "First name = " .$user->first_name .  "<br/>";
+
+            ?>
 
 
 

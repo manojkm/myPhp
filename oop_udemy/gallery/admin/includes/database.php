@@ -6,7 +6,6 @@
  * Time: 11:45 AM
  */
 
-require_once ("new_config.php");
 
 class Database{
 

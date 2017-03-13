@@ -37,6 +37,49 @@ class User{
 
    }
 
+   public static function instantation_one($user){
+
+        $the_object = new self();
+        $the_object->id          = $user['id'];
+        $the_object->username    = $user['username'];
+        $the_object->password    = $user['password'];
+        $the_object->first_name  = $user['first_name'];
+        $the_object->last_name   = $user['last_name'];
+
+        return $the_object;
+
+   }
+
+    public static function instantation_two($user){
+
+        $the_object = new self();
+
+        foreach ($user as $the_attribute => $value) {
+
+            if ($the_object->has_the_attribute($the_attribute)){
+
+                $the_object->the_attribute = $value;
+            }
+            
+        }
+
+        return $the_object;
+
+
+    }
+
+    private static function has_the_attribute($the_attribute){
+
+       $all_properties = get_object_vars($this);
+
+//     array_key_exists(key, array)
+       return array_key_exists($the_attribute, $all_properties);
+
+    }
+
+
+
+
 }
 
 
