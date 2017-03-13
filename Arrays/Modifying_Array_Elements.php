@@ -2,10 +2,10 @@
 
 $firends = array("nishal","midhun","renijth","vinshad", "shine" );
 
-echo $firends {2};
+echo $firends [2];
 
-$firends {2} = "asdsa";
+$firends [2] = "asdsa";
 
-echo $firends {2};
+echo $firends [2];
 
  ?>

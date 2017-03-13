@@ -16,6 +16,15 @@
             $users_found = User::find_user_by_id(2);
             $results = User::instantation_one($users_found);
 
+            // By myself
+            foreach ($results  as $key => $value) {
+                echo "Key=" . $key . ", Value=" . $value . "<br/>";
+            }
+
+            echo "<hr/>";
+
+            // End By myself
+
             echo "User ID =    " .$results->id .  "<br/>";
             echo "User name =  " .$results->username .  "<br/>";
             echo "Password =   " .$results->password .  "<br/>";
@@ -57,7 +66,7 @@
             ?>
 
 
-            <h3>Static method intro</h3>
+            <h3>Static method intro + While & For Each Loops</h3>
 
             <?php
 
@@ -78,7 +87,7 @@
 
 
 
-            <h3>Found all user with both while & for loop</h3>
+            <h3>Found all user with both While & For loop</h3>
 
             <?php
             $user = new User();
