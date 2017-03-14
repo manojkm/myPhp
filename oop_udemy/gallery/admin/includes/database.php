@@ -19,17 +19,7 @@ class Database{
 
     public function open_connection(){
 
-//Method1
-//        $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-//
-//        if ( mysqli_connect_errno() ) {
-//            printf("Connection failed: %s", mysqli_connect_error());
-//            exit();
-//
-//        }
-
 //Method2
-
         $this->connection = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
         if ($this->connection->connect_errno){
@@ -38,12 +28,18 @@ class Database{
             exit();
 
         }
-
         return true;
+
+//Method1
+/*        $this->connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+
+        if ( mysqli_connect_errno() ) {
+            printf("Connection failed: %s", mysqli_connect_error());
+            exit();
+
+        }*/
+
     }
-
-
-
 
 
    public function query($sql)

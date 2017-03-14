@@ -8,136 +8,39 @@
                 <small>Subheading</small>
             </h1>
 
-            <h3>Found user details with ID - Method 2 (Auto Instantation - Loop)</h3>
 
-            <h3>Found user details with ID - Method 2 (Instantation)</h3>
+            <h3>Find one user - Method 2 (Auto Instantation - Loop)</h3>
 
             <?php
-            $users_found = User::find_user_by_id(2);
-            $results = User::instantation_one($users_found);
+            $users_found = User::find_user_by_id(6);
 
-            // By myself
-            foreach ($results  as $key => $value) {
-                echo "Key=" . $key . ", Value=" . $value . "<br/>";
-            }
+            echo "<h4>var_dump</h4>";
+            var_dump( $users_found);
+            echo "<h4>print_r</h4>";
+            print_r( $users_found);
 
-            echo "<hr/>";
-
-            // End By myself
-
-            echo "User ID =    " .$results->id .  "<br/>";
-            echo "User name =  " .$results->username .  "<br/>";
-            echo "Password =   " .$results->password .  "<br/>";
-            echo "First name = " .$results->first_name .  "<br/>";
-
+            echo  "<br/><br/>";
+            echo  $users_found -> username ;
             ?>
 
-            <h3>Found user details with ID - Method 1 (Long)</h3>
+            <h3>Find all users - Method 2 (Auto Instantation - Loop)</h3>
 
             <?php
+                $users_found = User::find_all_users();
 
-            $users_found = User::find_user_by_id(2);
+                // Prints variable to stdout in human-readable format
+               /*  print_r($users_found );*/
 
-            $user = new User();
-            $user->id = $users_found['id'];
-            $user->username = $users_found['username'];
-            $user->password = $users_found['password'];
-            $user->first_name = $users_found['first_name'];
-            $user->last_name = $users_found['last_name'];
-
-            echo "User ID = " . $user->id .  "<br/>";
-            echo "User name = " .$user->username .  "<br/>";
-            echo "Password = " .$user->password .  "<br/>";
-            echo "First name = " .$user->first_name .  "<br/>";
-
-            ?>
-
-
-
-            <h3>Found user with ID</h3>
-
-            <?php
-
-            $users_found = User::find_user_by_id(2);
-            echo $users_found['username'];
-            echo "<hr/>";
-
-
-            ?>
-
-
-            <h3>Static method intro + While & For Each Loops</h3>
-
-            <?php
-
-            $result_set = User::find_all_users();
-
-            while ($row = mysqli_fetch_array($result_set)){
-                echo $row ['username'] . "<br/>" ;
-            }
-
-            echo "<hr/>";
-
-            foreach ($result_set as $row){
-                echo $row ['username']. "<br/>";
-            }
-
-            ?>
-
-
-
-
-            <h3>Found all user with both While & For loop</h3>
-
-            <?php
-            $user = new User();
-            $result_set = $user->find_all_users();
-
-            while ($row = mysqli_fetch_array($result_set)){
-                echo $row ['username'] . "<br/>" ;
-            }
-
-            echo "<hr/>";
-
-            foreach ($result_set as $row){
-                echo $row ['username']. "<br/>";
-            }
-
-            ?>
-
-
-
-            <h3>Found user with ID</h3>
-
-            <?php
-
-            $sql = "SELECT * FROM users WHERE id=1";
-            $result = $database->query($sql);
-            $users_found = mysqli_fetch_array($result);
-
-            echo $users_found['username'];
-            echo "<hr/>";
-
-            ?>
-
-
-
-
-            <h3>DB connection testing </h3>
-
-            <?php
-
-                if ($database->connection){
-                    echo "DB connection testing is fine";
+                foreach($users_found as $users){
+                    echo $users -> id . "<br/>";
                 }
-             echo "<hr/>";
 
             ?>
 
 
 
 
-
+            <br/><br/>
 
             <ol class="breadcrumb">
                 <li>
