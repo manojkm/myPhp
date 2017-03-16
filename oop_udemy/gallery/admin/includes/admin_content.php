@@ -13,14 +13,14 @@
 
             <?php
             $users_found = User::find_user_by_id(6);
+            echo  $users_found -> username ;
 
             echo "<h4>var_dump</h4>";
             var_dump( $users_found);
             echo "<h4>print_r</h4>";
             print_r( $users_found);
 
-            echo  "<br/><br/>";
-            echo  $users_found -> username ;
+
             ?>
 
             <h3>Find all users - Method 2 (Auto Instantation - Loop)</h3>
