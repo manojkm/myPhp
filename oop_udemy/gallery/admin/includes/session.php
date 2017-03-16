@@ -4,12 +4,29 @@ class Session
 {
     private $signed_in = false;
     public $user_id;
+    public $message;
 
     public function __construct()
     {
         session_start();
         $this->check_login();
     }
+
+
+    public function message($msg = ""){
+
+        if (!empty($msg)){
+            $_SESSION['message'] = $msg;
+        }
+
+        else{
+           return $this->message;
+        }
+
+    }
+
+
+
 
     public function is_signed_in()
     {
@@ -18,7 +35,6 @@ class Session
 
     public function login($user)
     {
-
         if ($user) {
             $this->user_id = $_SESSION['user_id'] = $user->id;
             $this->signed_in = true;

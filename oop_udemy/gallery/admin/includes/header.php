@@ -1,9 +1,6 @@
 <?php ob_start(); ?> <!-- Output Bufferining-->
 <?php require_once ("init.php");?>
 
-<?php if (!$session ->is_signed_in()){redirect("login.php");}?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
