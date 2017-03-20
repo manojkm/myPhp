@@ -34,8 +34,8 @@
             <h3>Testing Delete Method</h3>
             <?php
 
-            $user = User::find_user_by_id(92);
-            $user->delete();
+/*            $user = User::find_user_by_id(92);
+            $user->delete();*/
 
             ?>
 
@@ -53,7 +53,7 @@
             <h3>Testing Create Method</h3>
 
             <?php
-/*
+
             $user = new User();
 
             $user->username = "u3";
@@ -68,7 +68,7 @@
             else {
 
                 echo "not created";
-            }*/
+              }
 
             ?>
 
