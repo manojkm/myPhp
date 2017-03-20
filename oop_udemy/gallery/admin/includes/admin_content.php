@@ -8,6 +8,71 @@
                 <small>Subheading</small>
             </h1>
 
+            <h3>Testing Save Method</h3>
+
+            <h4>Update</h4>
+
+
+            <?php
+
+/*          $user = User::find_user_by_id(88);
+            $user->username = "asdasd";
+            $user->save();*/
+
+            ?>
+
+            <h4>Create</h4>
+            <?php
+
+//            $user = new User();
+//            $user->username = "asdasd";
+//            $user->save();
+
+            ?>
+
+
+            <h3>Testing Delete Method</h3>
+            <?php
+
+            $user = User::find_user_by_id(92);
+            $user->delete();
+
+            ?>
+
+            <h3>Testing Update Method</h3>
+
+            <?php
+
+/*          $user = User::find_user_by_id(8);
+            $user->last_name = "test1";
+            $user->update();*/
+
+            ?>
+
+
+            <h3>Testing Create Method</h3>
+
+            <?php
+/*
+            $user = new User();
+
+            $user->username = "u3";
+            $user->password = "p3";
+            $user->first_name = "f3";
+            $user->last_name = "l3";
+
+            if ($user->create()){
+                echo "created";
+            }
+
+            else {
+
+                echo "not created";
+            }*/
+
+            ?>
+
+
 
             <h3>Find one user - Method 2 (Auto Instantation - Loop)</h3>
 
@@ -19,7 +84,6 @@
             var_dump( $users_found);
             echo "<h4>print_r</h4>";
             print_r( $users_found);
-
 
             ?>
 
@@ -36,8 +100,6 @@
                 }
 
             ?>
-
-
 
             <br/><br/>
 
