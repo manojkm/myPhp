@@ -42,11 +42,9 @@
             <h3>Testing Update Method</h3>
 
             <?php
-
-/*          $user = User::find_user_by_id(8);
-            $user->last_name = "test1";
-            $user->update();*/
-
+            $user = User::find_user_by_id(8);
+            $user->last_name = "tm";
+            $user->update();
             ?>
 
 
@@ -55,8 +53,7 @@
             <?php
 
             $user = new User();
-
-            $user->username = "u3";
+                $user->username = "u3";
             $user->password = "p3";
             $user->first_name = "f3";
             $user->last_name = "l3";
