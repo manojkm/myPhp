@@ -8,6 +8,28 @@
                 <small>Subheading</small>
             </h1>
 
+                <h3>Photo : Create</h3>
+            <?php
+
+            $photos = new Photo();
+            $photos->title = "dummy";
+            $photos->save();
+
+            ?>
+
+
+          <h3>Find all photos</h3>
+
+            <?php
+
+            $photos =  Photo::find_all();
+            foreach ($photos as $photo){
+
+                echo $photo->title;
+
+            }
+            ?>
+
             <h3>Testing Save Method</h3>
 
             <h4>Update</h4>
@@ -24,9 +46,9 @@
             <h4>Create</h4>
             <?php
 
-//            $user = new User();
-//            $user->username = "asdasd";
-//            $user->save();
+            $user = new User();
+            $user->username = "mm new";
+            $user->save();
 
             ?>
 
@@ -53,7 +75,7 @@
             <?php
 
             $user = new User();
-                $user->username = "u3";
+            $user->username = "u3";
             $user->password = "p3";
             $user->first_name = "f3";
             $user->last_name = "l3";
