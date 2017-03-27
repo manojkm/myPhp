@@ -1,5 +1,6 @@
 <?php
 
+
 class Session
 {
     private $signed_in = false;

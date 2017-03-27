@@ -6,6 +6,7 @@
  * Date: 24/03/2017
  * Time: 11:47 AM
  */
+
 class Photo extends Db_object
 {
 

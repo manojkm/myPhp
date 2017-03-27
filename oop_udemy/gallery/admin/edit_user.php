@@ -7,9 +7,7 @@ if (empty($_GET['id'])){
     redirect('users.php');
 }
 
-
 $user = User::find_by_id($_GET['id']);
-
 
 if (isset($_POST['update'])){
 
@@ -19,13 +17,20 @@ if (isset($_POST['update'])){
         $user->last_name    = $_POST['last_name'];
         $user->password     = $_POST['password'];
 
+        //Refer lecture 142 if didn't understand the below.
+        if (empty($_FILES['user_image'])){
+            $user->save();
+        }else{
+
         $user->set_file($_FILES['user_image']);
-        $user->save_user_and_image();
+        $user->upload_photo();
+        $user->save();
+
+        redirect("edit_user.php?id={$user->id}");
+
+        }
     }
 }
-
-
-
 ?>
 
     <!-- Navigation -->
@@ -49,7 +54,7 @@ if (isset($_POST['update'])){
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Add User
+                        Edit User
                         <small>Subheading</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -61,7 +66,8 @@ if (isset($_POST['update'])){
                         </li>
                     </ol>
 
-
+                    <div class="col-lg-2"><img src="<?php echo $user->image_path_and_placeholder() ?>" width="150"/></div>
+                        <div class="col-lg-10">
                     <form action="" method="post" enctype="multipart/form-data">
 
                         <div class="form-group">
@@ -69,7 +75,6 @@ if (isset($_POST['update'])){
                             <input type="file" name="user_image" id="exampleInputFile">
                             <p class="help-block">Example block-level help text here.</p>
                         </div>
-
 
 
                         <div class="form-group">
@@ -93,9 +98,13 @@ if (isset($_POST['update'])){
                         </div>
 
 
-                        <button type="submit" name="update" class="btn btn-primary">Update</button>
+                        <button type="submit" name="update" class="btn btn-primary  btn-lg">Update</button>
+
+                        <a  href="delete_user.php?id=<?php echo $user->id; ?>" class="btn btn-danger btn-lg ">Delete</a>
 
                     </form>
+
+                        </div>
 
                 </div>
             </div>

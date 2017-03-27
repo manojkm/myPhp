@@ -16,7 +16,6 @@ class Database{
         $this->open_connection();
     }
 
-
     public function open_connection(){
 
 //Method2

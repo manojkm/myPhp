@@ -70,7 +70,7 @@ else {
                             <input type="text" class="form-control"  name="title" placeholder="Title" value="<?php echo $photo->title; ?>">
                         </div>
                         <div class="form-group">
-                            <a class="thumbnail" href=""><img src="<?php echo $photo->picture_path()?>" width="62" height="62"/></a>
+                            <a class="thumbnail" href=""><img src="<?php echo $photo->picture_path()?>" width="500" /></a>
                         </div>
 
                         <div class="form-group">

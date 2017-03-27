@@ -44,8 +44,8 @@ $photos =  Photo::find_all();
                     <h4>Photo, Find by ID</h4>
 
                     <?php
-                        $users_found = Photo::find_user_by_id(1);
-                        echo  $users_found -> filename ;
+//                        $users_found = Photo::find_user_by_id(1);
+//                        echo  $users_found -> filename ;
 
                         ?>
 

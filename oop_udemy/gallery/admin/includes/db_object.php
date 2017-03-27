@@ -6,10 +6,7 @@
  * Time: 10:10 PM
  */
 
-
 class Db_object{
-
-
 
     public static function find_all()
     {
@@ -18,10 +15,8 @@ class Db_object{
     }
     public static function find_by_id($id)
     {
-
         $result_set = static::find_by_query("SELECT * FROM " .static::$db_table. " WHERE id = $id LIMIT 1");
         return !empty($result_set) ? array_shift($result_set) : false;
-
     }
 
 
@@ -35,11 +30,8 @@ class Db_object{
 
     public static function find_user_by_id($id)
     {
-
         $result_set = static::find_by_query("SELECT * FROM " . static::$db_table. " WHERE id = $id LIMIT 1");
         return !empty($result_set) ? array_shift($result_set) : false;
-
-
     }
 
     // METHOD 1
@@ -56,7 +48,6 @@ class Db_object{
 // METHOD 2 with instantation_two method
     public static function find_by_query($sql)
     {
-
         global $database;
         $result_set = $database->query($sql);
         $the_object_array = array();

@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 /**
  * Created by PhpStorm.
@@ -6,12 +6,12 @@
  * Date: 12/3/17
  * Time: 11:46 AM
  */
+
 class User extends Db_object
 {
 
-
     protected static $db_table = "users";
-    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name','user_image');
+    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name', 'user_image');
     public $id;
     public $username;
     public $password;
@@ -23,7 +23,6 @@ class User extends Db_object
 
     public $tmp_path;
     public $errors = array();
-
     public $upload_errors_array = array(
         UPLOAD_ERR_OK => "There is no error, the file uploaded with success",
         UPLOAD_ERR_INI_SIZE => "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.",
@@ -36,9 +35,14 @@ class User extends Db_object
     );
 
 
+    public function image_path_and_placeholder()
+    {
+        return empty($this->user_image) ? $this->image_placeholder : $this->user_image_path();
+    }
 
-    public function image_path_and_placeholder(){
-        return empty($this->user_image)? $this->image_placeholder : $this->upload_directory.DS.$this->user_image ;
+    public function user_image_path()
+    {
+        return $this->upload_directory . DS . $this->user_image;
     }
 
 
@@ -49,7 +53,7 @@ class User extends Db_object
         $username = $database->escape_string($username);
         $password = $database->escape_string($password);
 
-        $sql = "SELECT * FROM " .self::$db_table. " WHERE ";
+        $sql = "SELECT * FROM " . self::$db_table . " WHERE ";
         $sql .= "username = '{$username}' ";
         $sql .= "AND password = '{$password}' ";
         $sql .= "LIMIT 1";
@@ -84,17 +88,16 @@ class User extends Db_object
 
     //    Revsion lecture 107 (Save Method Part # 1) again to understand this full methods
 
-    public function save_user_and_image()
+    public function upload_photo()
     {
 
-        if ($this->id) {
-            $this->update();
-        } else {
+//        if ($this->id) {
+//            $this->update();
+//        } else {
 
             if (!empty($this->errors)) {
                 return false;
             }
-
 
             if (empty($this->user_image || $this->tmp_path)) {
                 $this->errors[] = "file not available";
@@ -109,10 +112,10 @@ class User extends Db_object
             }
 
             if (move_uploaded_file($this->tmp_path, $target_path)) {
-                if ($this->create()) {
+//                if ($this->create()) {
                     unset($this->tmp_path);
                     return true;
-                }
+//                }
             } else {
 
                 $this->errors[] = "Propabaly an permission issue";
@@ -120,20 +123,9 @@ class User extends Db_object
             }
 
 //            $this -> create();
-        }
+//        }
 
     }
-
-
-
-
-
-
-    public function user_image_path()
-    {
-        return $this->upload_directory . DS . $this->user_image;
-    }
-
 
 
     public function delete_user()
@@ -154,7 +146,6 @@ class User extends Db_object
     }
 
 
-
-
 }
+
 ?>
