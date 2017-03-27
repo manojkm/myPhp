@@ -8,7 +8,7 @@
                 <small>Subheading</small>
             </h1>
 
-                <h3>Photo : Create</h3>
+             <h3>Photo : Create</h3>
             <?php
 
             $photos = new Photo();
@@ -93,7 +93,7 @@
 
 
 
-            <h3>Find one user - Method 2 (Auto Instantation - Loop)</h3>
+            <h3>Find one user by ID - Method 2 (Auto Instantation - Loop)</h3>
 
             <?php
             $users_found = User::find_user_by_id(6);

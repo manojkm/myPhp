@@ -9,6 +9,8 @@
 
 class Db_object{
 
+
+
     public static function find_all()
     {
 //        return static::find_by_query("SELECT * FROM users ");
@@ -109,7 +111,7 @@ class Db_object{
 
     }
 
-    private function has_the_attribute($the_attribute)
+    public function has_the_attribute($the_attribute)
     {
         $all_properties = get_object_vars($this);
 //      array_key_exists(key, array)
