@@ -4,8 +4,8 @@
 class Session
 {
     private $signed_in = false;
-    public $user_id;
-    public $message;
+    public  $user_id;
+    public  $message;
 
     public function __construct()
     {
@@ -40,10 +40,6 @@ class Session
         }
 
     }
-
-
-
-
 
 
     public function is_signed_in()

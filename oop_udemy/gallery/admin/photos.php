@@ -6,6 +6,11 @@
 
 <?php
 $photos =  Photo::find_all();
+
+echo $_SESSION['user_id'];
+
+//$users =  User::find_by_id($_SESSION['user_id']);
+//echo $users->first_name;
 /*foreach ($photos as $photo){
 
     echo $photo->id;
@@ -29,8 +34,6 @@ $photos =  Photo::find_all();
     </nav>
 
     <div id="page-wrapper">
-
-
         <div class="container-fluid">
 
             <!-- Page Heading -->
