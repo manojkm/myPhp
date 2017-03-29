@@ -1,14 +1,15 @@
 <?php include("includes/header.php"); ?>
 <?php  if (!$session ->is_signed_in()){redirect("login.php");}?>
-
-
 <?php
-$comments =  Comment::find_all();
-/*foreach ($comments as $user){
 
-    echo $user->id;
+if (empty($_GET['id'])) {
+    redirect('photos.php');
+}
 
-}*/
+$comments = Comment::find_the_comments($_GET['id']);
+//$comments = Comment::find_by_id($_GET['id']);
+
+
 ?>
 
     <!-- Navigation -->

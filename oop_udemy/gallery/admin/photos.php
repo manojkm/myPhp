@@ -1,13 +1,12 @@
 <?php include("includes/header.php"); ?>
 <?php  if (!$session ->is_signed_in()){redirect("login.php");}?>
 
-
-
-
 <?php
 $photos =  Photo::find_all();
 
-echo $_SESSION['user_id'];
+//echo $_SESSION['user_id'];
+
+
 
 //$users =  User::find_by_id($_SESSION['user_id']);
 //echo $users->first_name;
@@ -17,8 +16,6 @@ echo $_SESSION['user_id'];
 
 }*/
 ?>
-
-
 
 
     <!-- Navigation -->
@@ -70,6 +67,7 @@ echo $_SESSION['user_id'];
                             <td>File Name</td>
                             <td>Title</td>
                             <td>Size</td>
+                            <td>Comments</td>
 
                         </tr>
 
@@ -78,17 +76,23 @@ echo $_SESSION['user_id'];
                         <tr>
                             <td><img src="<?php echo $photo->picture_path()?>" width="62" height="62"/>
 
-                            <div class="pic_link">
+                            <div class="action_link">
                                 <a href="delete_photo.php?id=<?php echo $photo->id?>">Delete</a>
-                                <a href="#">View</a>
                                 <a href="edit_photo.php?id=<?php echo $photo->id?>"">Edit</a>
-                            </div>
+                                <a href="../photo.php?id=<?php echo $photo->id?>">View</a>
+                                </div>
 
                             </td>
                             <td><?php echo $photo->id; ?></td>
                             <td><?php echo $photo->filename; ?></td>
                             <td><?php echo $photo->title; ?></td>
                             <td><?php echo $photo->size; ?></td>
+                            <td> <a href="comments_photo.php?id=<?php echo $photo->id?>">View</a>
+                                <?php
+                                $comments = Comment::find_the_comments($photo->id);
+                                echo count($comments);
+                                ?>
+                            </td>
                         </tr>
 
                         <?php endforeach;?>
