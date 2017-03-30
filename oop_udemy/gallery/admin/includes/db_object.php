@@ -212,6 +212,25 @@ class Db_object{
         $database->query($sql);
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
 
+    }
+
+    public static function count_all(){
+        global $database;
+
+//       METHOD 1 - FROM GOOGLE -> http://php.net/manual/en/mysqli-result.num-rows.php
+        $sql = "SELECT *  FROM " . static::$db_table ;
+        $result_set =  $database->query($sql);
+        return $row_cnt = $result_set->num_rows;
+
+//        METHOD 2 - EDWIN
+/*        $sql = "SELECT COUNT(*) FROM " . static::$db_table ;
+        $result_set =  $database->query($sql);
+        $row = mysqli_fetch_array($result_set);
+        return array_shift($row);
+*/
+
+
+
 
     }
 

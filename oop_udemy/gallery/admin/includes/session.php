@@ -4,38 +4,38 @@
 class Session
 {
     private $signed_in = false;
-    public  $user_id;
-    public  $message;
+    public $user_id;
+    public $message;
+    public $count;
 
     public function __construct()
     {
         session_start();
         $this->check_login();
         $this->check_message();
+        $this->visitors_count();
     }
 
 
-    public function message($msg = ""){
+    public function message($msg = "")
+    {
 
-        if (!empty($msg)){
+        if (!empty($msg)) {
             $_SESSION['message'] = $msg;
-        }
-
-        else{
-           return $this->message;
+        } else {
+            return $this->message;
         }
 
     }
 
-    public function check_message(){
+    public function check_message()
+    {
 
-        if (isset($_SESSION['message'])){
+        if (isset($_SESSION['message'])) {
 
             $this->message = $_SESSION['message'];
             unset($_SESSION['message']);
-        }
-
-        else{
+        } else {
             $this->message = "";
         }
 
@@ -74,6 +74,19 @@ class Session
             unset($this->user_id);
             $this->signed_in = false;
         }
+    }
+
+
+    public function visitors_count()
+    {
+        if (isset($_SESSION['count'])) {
+            return $this->count = $_SESSION['count']++;
+
+        } else {
+            return $_SESSION['count'] = 0;
+        }
+
+
     }
 }
 

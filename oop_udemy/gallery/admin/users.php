@@ -47,6 +47,10 @@ $users =  User::find_all();
 
                     <a href="add_user.php" class="btn btn-primary">Add new user</a>
 
+                    <?php
+                    echo "<div><p class=\"text-danger\">" . $session->message() . "</p></div>";
+                    ?>
+
 
                     <table class="table">
 

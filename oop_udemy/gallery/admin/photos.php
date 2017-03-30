@@ -87,11 +87,13 @@ $photos =  Photo::find_all();
                             <td><?php echo $photo->filename; ?></td>
                             <td><?php echo $photo->title; ?></td>
                             <td><?php echo $photo->size; ?></td>
-                            <td> <a href="comments_photo.php?id=<?php echo $photo->id?>">View</a>
+                            <td><a href="comments_photo.php?id=<?php echo $photo->id?>">
+<!--                                View-->
                                 <?php
                                 $comments = Comment::find_the_comments($photo->id);
                                 echo count($comments);
                                 ?>
+                                </a>
                             </td>
                         </tr>
 

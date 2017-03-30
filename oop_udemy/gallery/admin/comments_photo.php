@@ -8,8 +8,6 @@ if (empty($_GET['id'])) {
 
 $comments = Comment::find_the_comments($_GET['id']);
 //$comments = Comment::find_by_id($_GET['id']);
-
-
 ?>
 
     <!-- Navigation -->
@@ -44,7 +42,12 @@ $comments = Comment::find_the_comments($_GET['id']);
                             <i class="fa fa-file"></i> Blank Page
                         </li>
                     </ol>
-                    <a href="add_user.php" class="btn btn-primary">Add new user</a>
+<!--                    <a href="add_user.php" class="btn btn-primary">Add new user</a>-->
+
+                    <?php
+                    echo "<div><p class=\"text-danger\">" . $session->message() . "</p></div>";
+                    ?>
+
                     <table class="table">
 
                         <tr>
@@ -60,7 +63,7 @@ $comments = Comment::find_the_comments($_GET['id']);
                                 <td><?php echo $comment->id; ?></td>
                                 <td><?php echo $comment->photo_id; ?></td>
                                 <td><?php echo $comment->author ?>  <div class="action_link">
-                                        <a href="delete_comment.php?id=<?php echo $comment->id?>">Delete</a>
+                                        <a href="delete_comment_photo.php?id=<?php echo $comment->id?>">Delete</a>
                                     </div></td>
                                 <td><?php echo $comment->body; ?></td>
 
