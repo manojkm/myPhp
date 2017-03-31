@@ -1,12 +1,15 @@
+
+<?php include("includes/header.php"); ?>
+
 <?php
-require_once("admin/includes/init.php");
+//require_once("admin/includes/init.php");
 
 if (empty($_GET['id'])) {
     redirect('index.php');
 }
 
 $photo = Photo::find_by_id($_GET['id']);
-echo $photo->filename;
+echo $photo->title;
 //echo count($photo);
 
 if (isset($_POST['submit'])) {
@@ -38,11 +41,6 @@ $users =  User::find_by_id($_SESSION['user_id']);
 
 ?>
 
-
-
-<?php include("includes/header.php"); ?>
-
-
 <div class="row">
 
     <div class="col-lg-8">
@@ -50,7 +48,14 @@ $users =  User::find_by_id($_SESSION['user_id']);
         <!-- Blog Post -->
 
         <!-- Title -->
-        <h1>Blog Post Title</h1>
+        <h1><?php
+            if ($photo->title){
+            echo $photo->title;
+            }
+            else{
+                echo "No Title";
+            }
+            ?></h1>
 
         <!-- Author -->
         <p class="lead">
@@ -72,11 +77,8 @@ $users =  User::find_by_id($_SESSION['user_id']);
         <hr>
 
         <!-- Post Content -->
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut,
-            error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae
-            laborum minus inventore?</p>
+        <p class="lead"><?php  echo $photo->description; ?></p>
 
-        <?php  echo $photo->description; ?>
 
         <hr>
 

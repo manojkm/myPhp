@@ -1,21 +1,23 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: manoj
  * Date: 23/3/17
  * Time: 10:10 PM
  */
-
-class Db_object{
+class Db_object
+{
 
     public static function find_all()
     {
 //        return static::find_by_query("SELECT * FROM users ");
-        return static::find_by_query("SELECT * FROM " . static::$db_table. " ");
+        return static::find_by_query("SELECT * FROM " . static::$db_table . " ");
     }
+
     public static function find_by_id($id)
     {
-        $result_set = static::find_by_query("SELECT * FROM " .static::$db_table. " WHERE id = $id LIMIT 1");
+        $result_set = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");
         return !empty($result_set) ? array_shift($result_set) : false;
     }
 
@@ -23,14 +25,13 @@ class Db_object{
     public static function find_all_users()
     {
 //        return static::find_by_query("SELECT * FROM users ");
-        return static::find_by_query("SELECT * FROM " . static::$db_table. " ");
+        return static::find_by_query("SELECT * FROM " . static::$db_table . " ");
     }
-
 
 
     public static function find_user_by_id($id)
     {
-        $result_set = static::find_by_query("SELECT * FROM " . static::$db_table. " WHERE id = $id LIMIT 1");
+        $result_set = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");
         return !empty($result_set) ? array_shift($result_set) : false;
     }
 
@@ -42,7 +43,6 @@ class Db_object{
             return $fetch_array;
 
         }*/
-
 
 
 // METHOD 2 with instantation_two method
@@ -108,15 +108,16 @@ class Db_object{
 //      array_key_exists(key, array)
         return array_key_exists($the_attribute, $all_properties);
     }
-    
-    protected function properties(){
+
+    protected function properties()
+    {
 // OLD WAY
 //        global $database;
 //        return get_object_vars($this);
 
         $properties = array();
-        foreach (static::$db_table_fields as $db_field){
-            if(property_exists($this, $db_field)){
+        foreach (static::$db_table_fields as $db_field) {
+            if (property_exists($this, $db_field)) {
                 $properties[$db_field] = $this->$db_field;
             }
 
@@ -124,15 +125,15 @@ class Db_object{
         return $properties;
     }
 
-    protected function  clean_properties(){
+    protected function clean_properties()
+    {
         global $database;
         $clean_properties = array();
-        foreach ($this->properties() as $key => $value){
+        foreach ($this->properties() as $key => $value) {
             $clean_properties[$key] = $database->escape_string($value);
         }
-        return $clean_properties ;
+        return $clean_properties;
     }
-
 
 
     public function save()
@@ -140,7 +141,8 @@ class Db_object{
         return isset($this->id) ? $this->update() : $this->create();
     }
 
-    public function create(){
+    public function create()
+    {
         global $database;
 
         $properties = $this->clean_properties();
@@ -152,7 +154,7 @@ class Db_object{
                 $sql .= $database->escape_string($this->first_name) . "', '";
                 $sql .= $database->escape_string($this->last_name) . "')";*/
 
-        $sql = "INSERT INTO " .static::$db_table. "(" . implode(",", array_keys($properties)) . ")";
+        $sql = "INSERT INTO " . static::$db_table . "(" . implode(",", array_keys($properties)) . ")";
         $sql .= "VALUES('" . implode("','", array_values($properties)) . "')";
 
 
@@ -175,7 +177,8 @@ class Db_object{
     }
 
 
-    public function update(){
+    public function update()
+    {
 
         global $database;
         $properties = $this->clean_properties();
@@ -186,8 +189,8 @@ class Db_object{
 
         }
 
-        $sql = "UPDATE ".static::$db_table. " SET ";
-        $sql .= implode(",", $property_pairs );
+        $sql = "UPDATE " . static::$db_table . " SET ";
+        $sql .= implode(",", $property_pairs);
 //        $sql .= "username= '" . $database->escape_string($this->username) . "',";
 //        $sql .= "password= '" . $database->escape_string($this->password) . "',";
 //        $sql .= "first_name= '" . $database->escape_string($this->first_name) . "',";
@@ -201,11 +204,12 @@ class Db_object{
     }
 
 
-    public function delete(){
+    public function delete()
+    {
 
         global $database;
 
-        $sql = "DELETE FROM ".static::$db_table. "  ";
+        $sql = "DELETE FROM " . static::$db_table . "  ";
         $sql .= "WHERE id=" . $database->escape_string($this->id);
         $sql .= " LIMIT 1";
 
@@ -214,26 +218,23 @@ class Db_object{
 
     }
 
-    public static function count_all(){
+    public static function count_all()
+    {
         global $database;
 
 //       METHOD 1 - FROM GOOGLE -> http://php.net/manual/en/mysqli-result.num-rows.php
-        $sql = "SELECT *  FROM " . static::$db_table ;
-        $result_set =  $database->query($sql);
+        $sql = "SELECT *  FROM " . static::$db_table;
+        $result_set = $database->query($sql);
         return $row_cnt = $result_set->num_rows;
 
 //        METHOD 2 - EDWIN
-/*        $sql = "SELECT COUNT(*) FROM " . static::$db_table ;
-        $result_set =  $database->query($sql);
-        $row = mysqli_fetch_array($result_set);
-        return array_shift($row);
-*/
-
-
-
+        /*        $sql = "SELECT COUNT(*) FROM " . static::$db_table ;
+                $result_set =  $database->query($sql);
+                $row = mysqli_fetch_array($result_set);
+                return array_shift($row);
+        */
 
     }
-
 
 }
 
