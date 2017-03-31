@@ -23,7 +23,6 @@ class Comment extends Db_object
         if (!empty($photo_id) && !empty($author) && !empty($body)) {
 
             $comment = new Comment();
-
             $comment->photo_id = (int)$photo_id; //to make sure its an intiger.
             $comment->author = $author;
             $comment->body = $body;
@@ -46,11 +45,6 @@ class Comment extends Db_object
         return self::find_by_query($sql);
 
     }
-
-
-
-
-
 
 }
 

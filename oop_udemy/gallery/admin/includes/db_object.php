@@ -171,7 +171,6 @@ class Db_object{
 // NEW WAY
         $database->query($sql);
         return (mysqli_affected_rows($database->connection) == 1) ? true : false;
-
     }
 
 
@@ -229,12 +228,7 @@ class Db_object{
         return array_shift($row);
 */
 
-
-
-
     }
-
-
 }
 
 

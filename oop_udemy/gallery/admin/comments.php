@@ -43,7 +43,10 @@ $comments =  Comment::find_all();
                             <i class="fa fa-file"></i> Blank Page
                         </li>
                     </ol>
-                    <a href="add_user.php" class="btn btn-primary">Add new user</a>
+
+                    <?php
+                    echo "<div><p class=\"text-danger\">" . $session->message() . "</p></div>";
+                    ?>
                     <table class="table">
 
                         <tr>
