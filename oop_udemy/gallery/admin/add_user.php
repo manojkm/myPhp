@@ -18,8 +18,7 @@ if (isset($_POST['create'])){
         $user->set_file($_FILES['user_image']);
 
 
-
-        if ($user->save_user_and_image()){
+        if ($user->upload_photo()){
             $message = "Photo uploaded successfully";
         }
         else{
