@@ -125,9 +125,9 @@
             <h3>Photo : Create</h3>
             <?php
 
-//            $photos = new Photo();
-//            $photos->title = "dummy";
-//            $photos->save();
+            $photos = new Photo();
+            $photos->title = "dummy";
+            $photos->save();
 
             ?>
 
@@ -151,9 +151,9 @@
 
             <?php
 
-            /*          $user = User::find_user_by_id(88);
-                        $user->username = "asdasd";
-                        $user->save();*/
+                $user = User::find_user_by_id(67);
+                $user->username = "asdasd";
+                $user->save();
 
             ?>
 
