@@ -1,0 +1,223 @@
+/*-----------------------------------------------------------------------------
+Theme Name		:       CreditCardsIndia
+Author			: 		Manoj KM
+Created			: 		May 01 2016
+Description		: 		Core Style Sheet for -- www.creditcardsindia.in
+Version			:		3.0
+
+Base Colors
+	Text		: 		#515151, #1da3d1
+	Background	: 		#ffffff
+	Theme		: 		#1da3d1, #efefef
+
+License : CreditCardsIndia own this theme. Do Not Copy!
+-----------------------------------------------------------------------------*/
+
+
+/* Custom Font
+   ----------------------------- */
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+/* Common styles
+   ----------------------------- */
+*{font-family: 'PT Sans', sans-serif;font-weight: 400;}
+body {padding-top:70px; color:#515151 }
+section{ padding:20px 0;}
+   
+
+/* Containers
+----------------------------- */
+
+
+/* Bootstrap Overwrites
+----------------------------- */
+a.btn-primary{ background:#1da3d1; border:1px solid #138cb5;}
+a{color: #1da3d1;}
+
+/* Header
+----------------------------- */
+section#header{ padding:0px 0;}
+section#header .navbar-default{ background:#FFF}
+section#header .navbar-nav{ margin:18px 0 0 0}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {background:#FFF; color:#1da3d1; border:1px solid #1da3d1; border-radius: 4px;}
+.navbar-nav > li > a {padding:6px 25px;}
+.navbar-brand{ height:auto; line-height:normal}
+.navbar-brand img{ float:left}
+.website_caption{ font-size:13px; padding:0 0 0 10px; margin:25px 0 0 0 ; display: block;float: left; border:1px solid #5e5e5e; border-width:0 0 0 1px}
+
+/* Contents - Home
+----------------------------- */
+section#intro{background:url(../images/bg-sections_blue.jpg) center top no-repeat; padding:0}
+.card_type{ padding:50px 0 20px 0}
+.card_type h1{ color:#FFF; font-size:30px;}
+.card_type h4{ color:#FFF}
+.card_choose {background:#FFF; color:#1da3d1; border:1px solid #1da3d1; border-radius:10px; margin:25px 0 0 0}
+.card_choose h3{ color:#1da3d1; padding:18px 18px 18px 20px; margin:0; border:1px solid #1da3d1; border-style:dashed; border-width:0 0 2px 0}
+.card_brand{ width:80px; height:25px; border:2px solid #1da3d1; border-style:dashed;  display:block; border-radius:10px;}
+.card_contents{padding:20px;}
+
+/*Owl Carousel*/
+.owl-carousel_outer{width:610px; margin:20px 0 40px 0}
+.owl-carousel .credit_card {text-align:center; border:1px solid #1da3d1; text-align:center; padding:10px; border-radius:4px}
+.owl-carousel .credit_card img { width:auto!important; margin:0 auto}
+.owl-carousel .owl-dots{ float:right; margin:40px 0 0 0}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span { background:#1da3d1;}
+
+.top_cards{ padding:50px 0}
+.top_cards ul li{border:1px solid #515151; border-width:0 1px 0 0; padding:0 10px; margin:0; line-height:normal}
+.top_cards ul li:last-child { border:none}
+
+/* Sign up form*/
+.win_shopping{ padding:50px 0 20px 0}
+.win_shopping h1{color:#FFF; font-size:30px; font-weight:bold;}
+.win_shopping h1 span{ color:#dfe21d; font-weight:bold;}
+.win_shopping h5{ color:#FFF}
+.arrow_point{position: relative;}
+.arrow_point:after {
+	top: 100%;
+	left: 5%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(29, 151, 202, 0);
+	border-top-color: #1d97ca;
+	border-width: 20px;
+	margin-left: -20px;
+}
+
+.sign_up{ margin-top:50px}
+.sign_up span.req{ color:#F00}
+.sign_up .btn-primary{ text-transform:uppercase; width:100%; text-align:center;background:#1da3d1; border:1px solid #138cb5; border-radius:4px ; font-size:25px;}
+.sign_up select{ font-size:13px; text-align:left; padding:3px; margin:0}
+
+
+/* Contents - Inner
+----------------------------- */
+section#title{ background:#1da3d1 url(../images/bg-sections_blue.jpg) center top no-repeat; padding:50px 0}
+section#title h1{ color:#FFF; padding:0; margin:0; font-weight:normal}
+section#contents{ color:#515151; padding:30px 0}
+.category_table_outer{ margin:40px 0}
+table.category_table thead, table.category_table tfoot{ color:#fff; }
+table.category_table thead th, table.category_table tfoot th{ background:#1da3d1; font-size:15px; font-weight:bold}
+
+table.category_table tbody td{ vertical-align:middle}
+table.category_table tbody h4{ color:#1da3d1;font-weight:bold}
+table.category_table tbody h5{ font-weight:bold; }
+.table-curved {border-collapse: separate;}
+.table-curved { border: solid #1da3d1 1px;border-radius: 4px;}
+.table-curved thead th:first-child { border-radius: 4px 0 0 0;}
+.table-curved thead th:last-child { border-radius: 0 4px 0 0;}
+table.category_table a.btn{ font-weight:bold}
+
+/* Disable table sorting for first column 
+.no-sort::after { display: none!important; }
+.no-sort { pointer-events: none!important; cursor: default!important; }
+*/
+
+
+
+/* CCI Ads*/
+#cci_ad{ background:#f4f4f4; border:2px solid #a2a2a2; border-style:dashed;  border-radius:4px; padding:15px;}
+#cci_ad .win_shopping{ padding:0px 0 0px 0}
+#cci_ad .win_shopping h1{ padding:0; margin:0; color:#1da3d1; font-size:25px}
+#cci_ad p{color:#1da3d1!important; margin:0}
+#cci_ad i.fa-inr{ color:#1da3d1; text-align:center}
+#cci_ad small{color:#1da3d1; }
+#cci_ad a.btn{ margin:10px 0 0 0; width:100%}
+
+
+/* Buttons
+----------------------------- */
+a.btn-border-blue{background:#FFF; color:#1da3d1; border:1px solid #1da3d1; border-radius:4px; padding:6px 25px;}
+
+/* Latest Offers
+----------------------------- */
+.latest_offers{}
+
+/* Footer
+----------------------------- */
+footer{ background:#efefef; padding:20px 0 0 0;}
+footer h5{ font-weight:bold; color:#515151}
+footer ul{ padding:0; margin:0}
+footer ul li{padding:0; margin:0; list-style:none; font-size:12px}
+footer ul li a{ color:#515151}
+
+.sub-footer{ background:#FFF; margin:20px 0 0 0; padding:10px 0; border:1px solid #efefef; border-width:0 0 1px 0; color:#515151; font-size:11px}
+.copyright{ background:#FFF; font-size:12px; padding:10px 0; color:#515151; font-size:11px}
+
+.foot_logo{background:url(../images/logo_CreditCardsIndia_medium.png) right bottom no-repeat; }
+
+
+/* Go to Top
+----------------------------- */
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(29, 163, 209, 0.8) url(../images/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #286090;
+  opacity: 1;
+}
+
+
+/* Misc
+----------------------------- */
+.blue{color:#1da3d1!important; }
+.shadow {-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=90, Color=#333333)";/*IE 8*/
+-moz-box-shadow: 0px 0px 7px #333333;/*FF 3.5+*/
+-webkit-box-shadow: 0px 0px 7px #333333;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 0px 0px 7px #333333;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=90, Color=#333333); /*IE 5.5-7*/
+}
+
+.fa-10x { font-size: 10em!important;}
+.brdr_left{ border:1px solid #c6e8f2; border-width:0 0 0 1px;}
+
+.p_r_0 { padding-right:0px}
+.p_r_2 { padding-right:2px}
+.p_r_4 { padding-right:4px}
+.p_r_6 { padding-right:6px}
+.p_r_8 { padding-right:8px}
+.p_r_10 { padding-right:10px}
+
+.p_l_0 { padding-left:0px}
+.p_l_2 { padding-left:2px}
+.p_l_4 { padding-left:4px}
+.p_l_6 { padding-left:6px}
+.p_l_8 { padding-left:8px}
+.p_l_10 { padding-left:10px}
+
+

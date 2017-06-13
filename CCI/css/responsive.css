@@ -1,0 +1,40 @@
+@media (max-width:1200px){} 
+
+@media (max-width:1024px){
+.owl-carousel_outer { width:auto}
+.cd-top {height: 60px;width: 60px;right: 30px;bottom: 30px;}
+}
+
+@media (min-width:768px) and (max-width:991px){
+.website_caption{ display:none}	
+.card_type{ padding:20px 0 0 0}
+.win_shopping h1{color:#1da3d1}
+.win_shopping h5{ color:#515151;}
+.win_shopping {padding:0}
+
+.p_r_0, .p_r_2, .p_r_4, .p_r_6, .p_r_8, .p_r_10 { padding-right:15px}
+.p_l_0, .p_l_2, .p_l_4, .p_l_6, .p_l_8, .p_l_10 { padding-left:15px}
+.sign_up select{ margin-bottom:5px}
+.cd-top {right: 20px;bottom: 20px;}
+}
+
+@media (max-width:767px){
+.website_caption{ display:none}	
+.card_type{ padding:20px 0 0 0}
+.win_shopping h1{color:#1da3d1}
+.win_shopping h5{ color:#515151;}
+.win_shopping {padding:0}
+.p_r_0, .p_r_2, .p_r_4, .p_r_6, .p_r_8, .p_r_10 { padding-right:15px}
+.p_l_0, .p_l_2, .p_l_4, .p_l_6, .p_l_8, .p_l_10 { padding-left:15px}
+.sign_up select{ margin-bottom:5px}
+.owl-carousel_outer { width:auto}
+.foot_logo { padding-bottom:50px;}
+section#title{padding:20px 0;}
+}
+
+@media (max-width:480px){
+.card_brand{ display:none}
+.top_cards ul li{ border:none}
+.owl-carousel .owl-dots { margin:0; float:none}
+}
+ 
