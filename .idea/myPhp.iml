@@ -19,11 +19,17 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
+          <root url="phar://$MODULE_DIR$/olegkrivtsov/helloworld/composer.phar/" />
           <root url="phar://$MODULE_DIR$/zf2crud/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/olegkrivtsov/formdemo/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/zf2_signup_login/composer.phar/" />
           <root url="phar://$MODULE_DIR$/zend/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
         </CLASSES>
         <SOURCES>
+          <root url="phar://$MODULE_DIR$/olegkrivtsov/helloworld/composer.phar/" />
           <root url="phar://$MODULE_DIR$/zf2crud/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/olegkrivtsov/formdemo/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/zf2_signup_login/composer.phar/" />
           <root url="phar://$MODULE_DIR$/zend/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
         </SOURCES>
       </library>

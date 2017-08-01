@@ -3,6 +3,6 @@
 
 $items = array("nishal","midhun","renijth","vinshad", "shine" );
 
-echo $items {2}
+echo $items[3]
 
  ?>

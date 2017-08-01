@@ -3,9 +3,9 @@
 const BR = "<br/>";
 
 	$arrayName = array("one", "two", array("three", "four", "five"), "six","seven","eight");
-	
+
 	echo $arrayName[1] . BR;
-	
+
 
 
 
@@ -94,7 +94,7 @@ echo is_array($lecturers);
 
 ?>
 
-<h3>Sort</h3> 
+<h3>Sort</h3>
 <?php
 $persons = array("Mary" => "Female", "John" => "Male", "Mirriam" => "Female");
 
@@ -108,9 +108,9 @@ echo "<hr>"
 <?php
 
 $cars = array
-( 
-	array("fid" => "14", "list"=>"1", "uid" =>"1", "filename" =>"trucks.jpg" , "filepath" => "sites/default/files/trucks.jpg" ),  
-	array("fid" => "214", "list"=>"21", "uid" =>"13", "filename" =>"car.jpg" , "filepath" => "sites/default/files/car.jpg" ), 
+(
+	array("fid" => "14", "list"=>"1", "uid" =>"1", "filename" =>"trucks.jpg" , "filepath" => "sites/default/files/trucks.jpg" ),
+	array("fid" => "214", "list"=>"21", "uid" =>"13", "filename" =>"car.jpg" , "filepath" => "sites/default/files/car.jpg" ),
 );
 
 
